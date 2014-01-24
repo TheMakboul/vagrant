@@ -26,6 +26,30 @@ describe VagrantPlugins::Kernel_V2::VMConfig do
     assert_valid
   end
 
+  context "#box_url" do
+    it "defaults to nil" do
+      subject.finalize!
+
+      expect(subject.box_url).to be_nil
+    end
+
+    it "turns into an array" do
+      subject.box_url = "foo"
+      subject.finalize!
+
+      expect(subject.box_url).to eq(
+        ["foo"])
+    end
+
+    it "keeps in array" do
+      subject.box_url = ["foo", "bar"]
+      subject.finalize!
+
+      expect(subject.box_url).to eq(
+        ["foo", "bar"])
+    end
+  end
+
   context "#box_version" do
     it "defaults to >= 0" do
       subject.finalize!
