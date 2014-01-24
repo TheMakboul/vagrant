@@ -26,6 +26,14 @@ describe VagrantPlugins::Kernel_V2::VMConfig do
     assert_valid
   end
 
+  context "#box_check_update" do
+    it "defaults to nil" do
+      subject.finalize!
+
+      expect(subject.box_check_update).to be_nil
+    end
+  end
+
   context "#box_url" do
     it "defaults to nil" do
       subject.finalize!
