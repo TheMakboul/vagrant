@@ -304,7 +304,7 @@ module VagrantPlugins
       def finalize!
         # Defaults
         @boot_timeout = 300 if @boot_timeout == UNSET_VALUE
-        @box_check_update = nil if @box_check_update == UNSET_VALUE
+        @box_check_update = true if @box_check_update == UNSET_VALUE
         @box_download_ca_cert = nil if @box_download_ca_cert == UNSET_VALUE
         @box_download_checksum = nil if @box_download_checksum == UNSET_VALUE
         @box_download_checksum_type = nil if @box_download_checksum_type == UNSET_VALUE
