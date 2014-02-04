@@ -5,7 +5,6 @@ require Vagrant.source_root.join("plugins/kernel_v2/config/vm")
 describe VagrantPlugins::Kernel_V2::VMConfig do
   subject { described_class.new }
 
-
   let(:machine) { double("machine") }
 
   def assert_valid
